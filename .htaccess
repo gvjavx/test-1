@@ -1,0 +1,13 @@
+#http to https
+
+RewriteEngine On
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+RewriteRule ^([^/.]+)$ index.php?url=$1
+RewriteRule ^([^/.]+)/([^/.]+)$ index.php?url=$1&sub_link=$2
+RewriteRule ^([^/.]+)/([^/.]+)/([^/.]+)$ index.php?url=$1&sub_link=$2&sub_sub_link=$3
+RewriteRule ^([^/.]+)/([^/.]+)/([^/.]+)/([^/.]+)$ index.php?url=$1&sub_link=$2&sub_sub_link=$3&sub_sub_sub_link=$4
